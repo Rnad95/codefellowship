@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+
+    <title>Home Page</title>
+</head>
+<body>
+<header>
+    <nav class="header-nav">
+        <form action="/login" method="Get">
+            <input th:type="submit" th:value="logout"/>
+        </form>
+    </nav>
+
+</header>
+<br/><br/><br/><br/>
+
+<p style="color: white; font-family: Cormorant Garamond">Welcome to CodeFellowShip that  allows people learning to code to
+    connect with each other and support each other on their coding journeys</p>
+
+<br><br>
+</body>
+</html>

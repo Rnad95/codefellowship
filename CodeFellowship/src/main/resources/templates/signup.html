@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+
+    <title>Sign Up </title>
+</head>
+<body>
+<h2 style="color: white">Sign Up</h2>
+<br><br><br><br>
+
+<section class="empInfo">
+
+    <form action="/signup" method="POST">
+        <fieldset>
+            <br/>
+            <legend>Registeration</legend>
+            <label for="username" style="color: white">Username</label>
+            <input type="text"placeholder="username" name="username"><br/>
+
+            <label for="password" style="color: white">Password</label>
+            <input type="password" placeholder="password" name="password"><br/><br/>
+
+            <label for="firstname" style="color: white">First Name</label>
+            <input type="text" placeholder="firstName" name="firstName"><br/><br/>
+
+            <label for="lastname" style="color: white">Last Name</label>
+            <input type="text" placeholder="lastName" name="lastName"><br/><br/>
+
+            <label for="birthday">Birthday:</label>
+            <input type="date" placeholder="Birthday" name="datOfBirth"><br/><br/>
+
+
+            <label for="Bio" style="color: white"> Bio</label>
+            <textarea rows="4" cols="50" name="bio" aria-placeholder="Your Bio">
+                </textarea>
+
+            <input type="submit" value="Sign Up">
+        </fieldset>
+    </form>
+</section>
+</body>
+</html>
