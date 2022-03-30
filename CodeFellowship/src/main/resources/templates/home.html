@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+
+    <title>Home Page</title>
+</head>
+<body>
+<header>
+<!--    <sec:authentication property="principal.username" />-->
+   <span style="color: white;" th:text="${user.getUsername()}"></span>
+    <nav class="header-nav">
+
+        <form action="/login" method="Get">
+            <input th:type="submit" th:value="logout"/>
+        </form>
+    </nav>
+
+</header>
+<br/><br/><br/><br/>
+
+<p style="color: white; font-family: Cormorant Garamond">Welcome to CodeFellowShip that  allows people learning to code to
+    connect with each other and support each other on their coding journeys</p>
+
+<br><br>
+<form class="empInfo" >
+    <fieldset>
+        <legend>Information </legend>
+        <ul th:value="${user}">
+            <span>Username</span>
+            <span th:text="${user.getUsername()}"></span> <br>
+            <br>
+            <span>First Name</span>
+            <span th:text="${user.getFirstName()}"></span> <br>
+            <br>
+            <span>Last Name</span>
+            <span th:text="${user.getLastName()}"></span> <br>
+            <br>
+            <span>Bio</span>
+            <span th:text="${user.getBio()}"></span> <br>
+            <br>
+            <span>Birthday</span>
+            <span th:text="${user.getDatOfBirth()}"></span> <br>
+            <br>
+            <p>****************************************************************</p>
+        </ul>
+    </fieldset>
+</form>
+</body>
+</html>
