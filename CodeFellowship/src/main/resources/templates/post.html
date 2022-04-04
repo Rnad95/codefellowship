@@ -1,3 +1,75 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link th:href="@{/css/styles.css}" rel="stylesheet"/>-->
+
+<!--    <title>Home Page</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--    <nav class="header-nav">-->
+<!--        <form action="/login" method="Get">-->
+<!--            <input th:type="submit" th:value="logout"/>-->
+<!--        </form>-->
+
+<!--    </nav>-->
+<!--</header>-->
+
+<!--<br><br>-->
+
+<!--<form class="empInfo" >-->
+<!--    <fieldset>-->
+<!--        <legend>Posts </legend>-->
+<!--        <ul th:each="post:${postList}">-->
+<!--            <br><br>-->
+<!--            <span>Post</span>-->
+<!--            <span th:text="${post}"></span> <br>-->
+<!--            <br>-->
+<!--            <span>Time</span>-->
+<!--            <span th:text="${post}"></span> <br>-->
+<!--            <br>-->
+<!--            <p>****************************************************************</p>-->
+<!--        </ul>-->
+<!--    </fieldset>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link th:href="@{/css/styles.css}" rel="stylesheet"/>-->
+
+<!--    <title>Post </title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h2 style="color: white">Create New Post</h2>-->
+<!--<br><br><br><br>-->
+
+<!--<section class="empInfo">-->
+
+<!--    <form action="/createPost" method="POST">-->
+<!--        <fieldset>-->
+<!--            <br/>-->
+<!--            <legend>Create New Post</legend>-->
+<!--            <br>-->
+<!--            <label for="body" style="color: white"> What's in your mind</label><br>-->
+<!--            <textarea rows="4" cols="50" name="bio" aria-placeholder="Your thoughts">-->
+<!--                </textarea>-->
+<!--            <br><br>-->
+<!--            <input type="submit" value="Create a new Post">-->
+<!--        </fieldset>-->
+<!--    </form>-->
+<!--</section>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,14 +82,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
 
-    <title>Sign up</title>
+    <title>Log in</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Additional CSS Files -->
-    <!--    <link rel="stylesheet" href="assets/css/fontawesome.css">-->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-574-mexant.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -46,41 +118,39 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
+                            <br><br>
 
-                            <section class="empInfo">
-                                <h2 style="color: white">Sign up</h2>
-                                <form action="/signup" method="POST">
-                                    <fieldset>
-
-                                        <legend>Registeration</legend>
-                                        <label for="username" style="color: white">Username</label>
-                                        <input type="text"placeholder="username" name="username"><br/>
-
-                                        <label for="password" style="color: white">Password</label>
-                                        <input type="password" placeholder="password" name="password"><br/><br/>
-
-                                        <label for="firstname" style="color: white">First Name</label>
-                                        <input type="text" placeholder="firstName" name="firstName"><br/><br/>
-
-                                        <label for="lastname" style="color: white">Last Name</label>
-                                        <input type="text" placeholder="lastName" name="lastName"><br/><br/>
-
-                                        <label for="birthday">Birthday:</label>
-                                        <input type="date" placeholder="Birthday" name="datOfBirth"><br/><br/>
-
-
-                                        <label for="Bio" style="color: white"> Bio</label>
-                                        <textarea rows="4" cols="50" name="bio" aria-placeholder="Your Bio"></textarea>
+                            <form class="empInfo" >
+                                <fieldset>
+                                    <legend>Posts </legend>
+                                    <ul th:each="post:${postList}">
+                                        <br><br>
+                                        <span>Post</span>
+                                        <span th:text="${post}"></span> <br>
                                         <br>
-                                        <input type="submit" value="Sign Up" style="width: 200px;">
-                                    </fieldset>
-                                </form>
-                            </section>
+                                        <span>Time</span>
+                                        <span th:text="${post}"></span> <br>
+                                        <br>
+                                        <p>****************************************************************</p>
+                                    </ul>
+                                </fieldset>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright © 2022. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
