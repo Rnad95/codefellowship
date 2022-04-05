@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.security.Principal;
+
 @Controller
 public class GeneralController {
 
@@ -16,11 +18,17 @@ public class GeneralController {
     ApplicationUserRepository applicationUserRepository;
 
 // **************************************** Home Page *******************************************
+//    @ResponseStatus(value = HttpStatus.OK)
+//    @GetMapping("/")
+//    String HomePage(){
+//        System.out.println("The endpoint for work");
+//        return "homePage";
+//    }
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/")
-    String HomePage(){
-        System.out.println("The endpoint for work");
-        return "homePage";
+    public String getHome(Principal p , Model m){
+
+        return "home.html";
     }
 
 // **************************************** Render the Information *******************************************

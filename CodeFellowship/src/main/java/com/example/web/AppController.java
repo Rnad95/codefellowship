@@ -47,7 +47,7 @@ public class AppController {
                     encoder.encode(password),firstName,lastName,
                     datOfBirth,bio);
             applicationUserRepository.save(appuser);
-            return new RedirectView("/"+username);
+            return new RedirectView("/"+username+"/");
         }
 
 }
