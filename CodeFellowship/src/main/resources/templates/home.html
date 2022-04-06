@@ -1,51 +1,164 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+
+<!--    <link th:href="@{/css/styles.css}" rel="stylesheet"/>-->
+<!--    <link rel="stylesheet" href="assets/css/fontawesome.css">-->
+<!--    <link rel="stylesheet" href="assets/css/templatemo-574-mexant.css">-->
+<!--    <link rel="stylesheet" href="assets/css/owl.css">-->
+<!--    <link rel="stylesheet" href="assets/css/animate.css">-->
+<!--    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">-->
+<!--    <title>Home Page</title>-->
+<!--</head>-->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 
     <title>Home Page</title>
+
+        <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-574-mexant.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+
 </head>
+
 <body>
-<header>
-<!--    <sec:authentication property="principal.username" />-->
-   <span style="color: white;" th:text="${user.getUsername()}"></span>
-    <nav class="header-nav">
-
-        <form action="/login" method="Get">
-            <input th:type="submit" th:value="logout"/>
-        </form>
-    </nav>
-
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="/">Home</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
 </header>
-<br/><br/><br/><br/>
 
-<p style="color: white; font-family: Cormorant Garamond">Welcome to CodeFellowShip that  allows people learning to code to
-    connect with each other and support each other on their coding journeys</p>
+<nav>
+                            <p style="color: white; font-family: Cormorant Garamond">Welcome to CodeFellowShip that  allows people learning to code to
+                                connect with each other and support each other on their coding journeys</p>
 
-<br><br>
-<form class="empInfo" >
-    <fieldset>
-        <legend>Information </legend>
-        <ul th:value="${user}">
-            <span>Username</span>
-            <span th:text="${user.getUsername()}"></span> <br>
-            <br>
-            <span>First Name</span>
-            <span th:text="${user.getFirstName()}"></span> <br>
-            <br>
-            <span>Last Name</span>
-            <span th:text="${user.getLastName()}"></span> <br>
-            <br>
-            <span>Bio</span>
-            <span th:text="${user.getBio()}"></span> <br>
-            <br>
-            <span>Birthday</span>
-            <span th:text="${user.getDatOfBirth()}"></span> <br>
-            <br>
-            <p>****************************************************************</p>
-        </ul>
-    </fieldset>
-</form>
+                            <br><br>
+                            <form class="empInfo" >
+
+                                <fieldset>
+
+                                    <legend>Information </legend>
+                                    <ul th:value="${user}">
+                                        <br><br>
+                                        <img th:src="@{/assets/femleImg.png}" alt="ImgeURL" width="250px" height="250px">
+
+                                        <br>
+                                        <br>
+                                        <span>Username</span>
+                                        <span th:text="${user.getUsername()}"></span> <br>
+                                        <br>
+                                        <span>First Name</span>
+                                        <span th:text="${user.getFirstName()}"></span> <br>
+                                        <br>
+                                        <span>Last Name</span>
+                                        <span th:text="${user.getLastName()}"></span> <br>
+                                        <br>
+                                        <span>Bio</span>
+                                        <span th:text="${user.getBio()}"></span> <br>
+                                        <br>
+                                        <span>Birthday</span>
+                                        <span th:text="${user.getDatOfBirth()}"></span> <br>
+                                        <br>
+                            </nav>
+                                <br><br>
+
+                                        <section class="empInfo">
+
+                                            <form action="/createPost" method="POST">
+                                                <fieldset>
+                                                    <br/>
+                                                    <legend>Create New Post</legend>
+                                                    <br>
+                                                    <label for="body" style="color: white"> What's in your mind</label><br>
+                                                    <textarea rows="4" cols="50" name="body" aria-placeholder="Your thoughts"></textarea>
+                                                    <br><br>
+                                                    <input type="submit" value="Create a new Post">
+                                                </fieldset>
+                                            </form>
+                                        </section>
+                                    </ul>
+                                </fieldset>
+                            </form>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="assets/js/isotope.min.js"></script>
+        <script src="assets/js/owl-carousel.js"></script>
+        <script src="assets/js/wow.js"></script>
+        <script src="assets/js/tabs.js"></script>
+        <!--        <script src="assets/js/swiper.js"></script>-->
+        <script src="assets/js/custom.js"></script>
+        <script>
+            var interleaveOffset = 0.5;
+
+            var swiperOptions = {
+                loop: true,
+                speed: 1000,
+                grabCursor: true,
+                watchSlidesProgress: true,
+                mousewheelControl: true,
+                keyboardControl: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                on: {
+                    progress: function () {
+                        var swiper = this;
+                        for (var i = 0; i < swiper.slides.length; i++) {
+                            var slideProgress = swiper.slides[i].progress;
+                            var innerOffset = swiper.width * interleaveOffset;
+                            var innerTranslate = slideProgress * innerOffset;
+                            swiper.slides[i].querySelector(".slide-inner").style.transform =
+                                "translate3d(" + innerTranslate + "px, 0, 0)";
+                        }
+                    },
+                    touchStart: function () {
+                        var swiper = this;
+                        for (var i = 0; i < swiper.slides.length; i++) {
+                            swiper.slides[i].style.transition = "";
+                        }
+                    },
+                    setTransition: function (speed) {
+                        var swiper = this;
+                        for (var i = 0; i < swiper.slides.length; i++) {
+                            swiper.slides[i].style.transition = speed + "ms";
+                            swiper.slides[i].querySelector(".slide-inner").style.transition =
+                                speed + "ms";
+                        }
+                    }
+                }
+            };
+
+            var swiper = new Swiper(".swiper-container", swiperOptions);
+        </script>
+    </div>
+
 </body>
-</html>
